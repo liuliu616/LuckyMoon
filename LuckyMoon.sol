@@ -13,10 +13,10 @@
    #LIQ+#RFI+#SHIB+#DOGE = #BEE
 
    #SAFEMOON features:
-   3% fee auto add to the liquidity pool to locked forever when selling  3%的费用自动添加到流动资金池，在出售时永远锁定
-   2% fee auto distribute to all holders  2%的费用自动分配给所有持有人
-   I created a black hole so #Bee token will deflate itself in supply with every transaction  我创造了一个黑洞，所以#Bee代币会在每笔交易中平减自己的供应。
-   50% Supply is burned at start.  50%的供应在启动时被烧毁
+   3% fee auto add to the liquidity pool to locked forever when selling  //3%的费用自动添加到流动资金池，在出售时永远锁定
+   2% fee auto distribute to all holders  //2%的费用自动分配给所有持有人
+   I created a black hole so #Bee token will deflate itself in supply with every transaction  //我创造了一个黑洞，所以#Bee代币会在每笔交易中平减自己的供应。
+   50% Supply is burned at start.  //50%的供应在启动时被烧毁
    
 
  */
@@ -28,33 +28,33 @@ interface IERC20 {
     function totalSupply() external view returns (uint256);
 
     /**
-     * @dev Returns the amount of tokens owned by `account`.
+     * @dev Returns the amount of tokens owned by `account`. //返回`account'所拥有的代币数量
      */
     function balanceOf(address account) external view returns (uint256);
 
     /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     * @dev Moves `amount` tokens from the caller's account to `recipient`.//从调用者的账户向 "接受者 "移动 相应"数额 "代币
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Returns a boolean value indicating whether the operation succeeded.//返回一个表示操作是否成功的布尔值
      *
-     * Emits a {Transfer} event.
+     * Emits a {Transfer} event.//发出一个{传输}事件
      */
     function transfer(address recipient, uint256 amount) external returns (bool);
 
     /**
      * @dev Returns the remaining number of tokens that `spender` will be
      * allowed to spend on behalf of `owner` through {transferFrom}. This is
-     * zero by default.
+     * zero by default.//返回`spender`将被允许通过{transferFrom}代表`owner`花费的剩余代币数量,默认情况下，该值为零.
      *
-     * This value changes when {approve} or {transferFrom} are called.
+     * This value changes when {approve} or {transferFrom} are called.//当调用{approve}或{transferFrom}时，这个值会发生变化。
      */
-    function allowance(address owner, address spender) external view returns (uint256);
+    function allowance(address owner, address spender) external view returns (uint256);//津贴
 
     /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.//设置`amount'为`spender'在调用者的代币上的津贴
      *
      * Returns a boolean value indicating whether the operation succeeded.
-     *
+     *//请注意，用这种方法改变津贴带来的风险是，有人可能通过令人遗憾的交易排序同时使用旧的和新的津贴。缓解这种竞争状况的一个可能的解决方案是，首先将花费者的津贴减少到0，然后再设置所需的值。
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
      * transaction ordering. One possible solution to mitigate this race
@@ -96,7 +96,7 @@ interface IERC20 {
 
 /**
  * @dev Wrappers over Solidity's arithmetic operations with added overflow
- * checks.
+ * checks.//对Solidity的算术运算进行封装，增加了溢出检查。
  *
  * Arithmetic operations in Solidity wrap on overflow. This can easily result
  * in bugs, because programmers usually assume that an overflow raises an
@@ -159,9 +159,9 @@ library SafeMath {
 
     /**
      * @dev Returns the multiplication of two unsigned integers, reverting on
-     * overflow.
+     * overflow.//返回两个无符号整数的乘法，溢出时返回。
      *
-     * Counterpart to Solidity's `*` operator.
+     * Counterpart to Solidity's `*` operator.//对应于Solidity的`*`操作符
      *
      * Requirements:
      *
@@ -207,7 +207,7 @@ library SafeMath {
      *
      * Requirements:
      *
-     * - The divisor cannot be zero.
+     * - The divisor cannot be zero.//被除数不能为零
      */
     function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
         require(b > 0, errorMessage);
