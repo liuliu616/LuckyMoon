@@ -13,10 +13,10 @@
    #LIQ+#RFI+#SHIB+#DOGE = #BEE
 
    #SAFEMOON features:
-   3% fee auto add to the liquidity pool to locked forever when selling
-   2% fee auto distribute to all holders
-   I created a black hole so #Bee token will deflate itself in supply with every transaction
-   50% Supply is burned at start.
+   3% fee auto add to the liquidity pool to locked forever when selling  3%的费用自动添加到流动资金池，在出售时永远锁定
+   2% fee auto distribute to all holders  2%的费用自动分配给所有持有人
+   I created a black hole so #Bee token will deflate itself in supply with every transaction  我创造了一个黑洞，所以#Bee代币会在每笔交易中平减自己的供应。
+   50% Supply is burned at start.  50%的供应在启动时被烧毁
    
 
  */
