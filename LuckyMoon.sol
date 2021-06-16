@@ -54,7 +54,8 @@ interface IERC20 {
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.//设置`amount'为`spender'在调用者的代币上的津贴
      *
      * Returns a boolean value indicating whether the operation succeeded.
-     *//请注意，用这种方法改变津贴带来的风险是，有人可能通过令人遗憾的交易排序同时使用旧的和新的津贴。缓解这种竞争状况的一个可能的解决方案是，首先将花费者的津贴减少到0，然后再设置所需的值。
+     *请注意，用这种方法改变津贴带来的风险是，有人可能通过令人遗憾的交易排序同时使用旧的和新的津贴。
+     *缓解这种竞争状况的一个可能的解决方案是，首先将花费者的津贴减少到0，然后再设置所需的值。
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
      * transaction ordering. One possible solution to mitigate this race
