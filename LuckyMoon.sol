@@ -269,7 +269,7 @@ abstract contract Context {
  */
 library Address {
     /**
-     * @dev Returns true if `account` is a contract.
+     * @dev Returns true if `account` is a contract.//如果 "账户 "是一个合同，则返回true
      *
      * [IMPORTANT]
      * ====
@@ -279,10 +279,10 @@ library Address {
      * Among others, `isContract` will return false for the following
      * types of addresses:
      *
-     *  - an externally-owned account
-     *  - a contract in construction
-     *  - an address where a contract will be created
-     *  - an address where a contract lived, but was destroyed
+     *  - an externally-owned account //一个外部拥有的账户
+     *  - a contract in construction  //施工合同
+     *  - an address where a contract will be created //一个将创建合同的地址
+     *  - an address where a contract lived, but was destroyed //一个合同的居住地址，但被销毁了
      * ====
      */
     function isContract(address account) internal view returns (bool) {
@@ -405,14 +405,14 @@ library Address {
 /**
  * @dev Contract module which provides a basic access control mechanism, where
  * there is an account (an owner) that can be granted exclusive access to
- * specific functions.
+ * specific functions.//合同模块提供了一个基本的访问控制机制，其中有一个账户（所有者），可以被授予对特定功能的独家访问。
  *
  * By default, the owner account will be the one that deploys the contract. This
- * can later be changed with {transferOwnership}.
+ * can later be changed with {transferOwnership}.//默认情况下，所有者账户将是部署合同的账户。这以后可以用{transferOwnership}来改变。
  *
  * This module is used through inheritance. It will make available the modifier
  * `onlyOwner`, which can be applied to your functions to restrict their use to
- * the owner.
+ * the owner.//这个模块是通过继承来使用的。它将提供修改器`onlyOwner`，可以应用于你的函数，以限制其对所有者的使用。
  */
 contract Ownable is Context {
     address private _owner;
@@ -471,7 +471,7 @@ contract Ownable is Context {
         return _lockTime;
     }
 
-    //Locks the contract for owner for the amount of time provided
+    //Locks the contract for owner for the amount of time provided 在规定的时间内为业主锁定合同
     function lock(uint256 time) public virtual onlyOwner {
         _previousOwner = _owner;
         _owner = address(0);
@@ -702,7 +702,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 }
 
 
-contract SafeMoon is Context, IERC20, Ownable {
+contract LuckyMoon is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -716,12 +716,12 @@ contract SafeMoon is Context, IERC20, Ownable {
     address[] private _excluded;
    
     uint256 private constant MAX = ~uint256(0);
-    uint256 private _tTotal = 1000000000 * 10**6 * 10**9;
+    uint256 private _tTotal = 1000000 * 10**6 * 10**9;
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "SafeMoon";
-    string private _symbol = "SAFEMOON";
+    string private _name = "LuckyMoon";
+    string private _symbol = "LUCKYMOON";
     uint8 private _decimals = 9;
     
     uint256 public _taxFee = 5;
@@ -736,8 +736,8 @@ contract SafeMoon is Context, IERC20, Ownable {
     bool inSwapAndLiquify;
     bool public swapAndLiquifyEnabled = true;
     
-    uint256 public _maxTxAmount = 5000000 * 10**6 * 10**9;
-    uint256 private numTokensSellToAddToLiquidity = 500000 * 10**6 * 10**9;
+    uint256 public _maxTxAmount = 5000 * 10**6 * 10**9;
+    uint256 private numTokensSellToAddToLiquidity = 500 * 10**6 * 10**9;
     
     event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
     event SwapAndLiquifyEnabledUpdated(bool enabled);
@@ -916,7 +916,7 @@ contract SafeMoon is Context, IERC20, Ownable {
         emit SwapAndLiquifyEnabledUpdated(_enabled);
     }
     
-     //to recieve ETH from uniswapV2Router when swaping
+     //to recieve ETH from uniswapV2Router when swaping //在交换时从uniswapV2Router接收ETH
     receive() external payable {}
 
     function _reflectFee(uint256 rFee, uint256 tFee) private {
